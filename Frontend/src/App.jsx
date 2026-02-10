@@ -1,10 +1,9 @@
-import Login from "./components/Login";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
     <div>
-      <h1>Tilankäytön Markkinapaikka</h1>
-      <Login />
+      <LoginPage />
     </div>
   );
 }
