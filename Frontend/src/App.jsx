@@ -1,11 +1,19 @@
-import { Routes, Route } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Header from "./components/Header";
+import AuthPage from "./pages/AuthPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/login" element={<LoginPage />} />
-    </Routes>
+    <>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<AuthPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </>
   );
 }
 
