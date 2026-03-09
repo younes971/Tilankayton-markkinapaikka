@@ -11,36 +11,41 @@ function LoginPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const success = login(email);
-    if (success) {
-      navigate("/home");
-    } else {
-      setError("Invalid email or password");
+
+    // Basic validation
+    if (!email || !password) {
+      setError("Please fill in all fields");
+      return;
     }
+
+    login(email);
+    navigate("/home");
   };
 
   return (
     <div>
-        <h1>Login</h1>
+      <h1>Login</h1>
+
       <form onSubmit={handleSubmit}>
-        <input 
-          type="email" 
-          placeholder="Email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-          required
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <br />
-        <input 
-          type="password" 
-          placeholder="Password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          required
+
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <br />
+
         <button type="submit">Login</button>
-        <p style={{color:"red"}}>{error}</p>
+
+        {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
     </div>
   );
