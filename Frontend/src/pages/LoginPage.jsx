@@ -1,51 +1,54 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../contexts/UserContext";
+import { UserContext } from "../context/UserContext";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const { login } = useContext(UserContext);
   const navigate = useNavigate();
-  const [error, setError] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-
-    // Basic validation
-    if (!email || !password) {
-      setError("Please fill in all fields");
-      return;
-    }
-
-    login(email);
-    navigate("/home");
+    fetch("http://localhost:3001/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          alert(data.error);
+        } else {
+          login(data.email);
+          navigate("/");
+        }
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
-    <div>
+    <div style={{ padding: "20px" }}>
       <h1>Login</h1>
-
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleLogin}>
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <br />
-
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Enter password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
+
         <br />
-
         <button type="submit">Login</button>
-
-        {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
     </div>
   );

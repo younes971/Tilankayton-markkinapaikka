@@ -1,80 +1,63 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 function RegisterPage() {
+  const { login } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-
-    console.log("Register submit triggered"); 
-
-    setError("");
-    setSuccess("");
-
-    if (!email || !password || !confirmPassword) {
-      setError("Please fill in all fields");
-      return;
+    fetch("http://localhost:3001/register", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ email, password }),
+})
+  .then((res) => res.json())
+  .then((data) => {
+    if (data.error) {
+      alert(data.error);
+    } else {
+      login(email);
+      navigate("/");
     }
-
-    if (password !== confirmPassword) {
-      setError("Passwords do not match");
-      return;
-    }
-
-    setSuccess("Registration successful (frontend only)");
-
-    // reset fields
-    setEmail("");
-    setPassword("");
-    setConfirmPassword("");
+  })
+  .catch((err) => console.error(err));
   };
 
   return (
     <div>
-      <h2>Register</h2>
-
-      <form onSubmit={handleSubmit}>
+      <h1>Register</h1>
+      <form onSubmit={handleRegister}>
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Enter email"
           value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-            setError("");
-          }}
+          onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <br />
-
         <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-            setError("");
-          }}
-        />
-        <br />
+  type="password"
+  placeholder="Enter password"
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+  required
+/>
+<br />
+<input
+  type="password"
+  placeholder="Confirm password"
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+  required
+/>
 
-        <input
-          type="password"
-          placeholder="Confirm password"
-          value={confirmPassword}
-          onChange={(e) => {
-            setConfirmPassword(e.target.value);
-            setError("");
-          }}
-        />
-        <br />
 
+        <br />
         <button type="submit">Register</button>
-
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {success && <p style={{ color: "green" }}>{success}</p>}
       </form>
     </div>
   );
