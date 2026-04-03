@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static("uploads"));
 
-// TEMP DATABASE (in memory)
+// TEMP DATABASE (just in memory)
 let spaces = [];
 let users = [];
 

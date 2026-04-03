@@ -226,17 +226,19 @@ function SpacesPage() {
               />
             )}
 
-            <h3>{space.title}</h3>
-
-            <p style={{ fontSize: "14px" }}>{space.description}</p>
-
-            <p>
+            <p>Title: {space.title}</p>
+            <p>Description: {space.description}</p>
+            
+            
+            <p>Category:
+            
               {space.category === "workspace"
                 ? "🧑‍💼 Workspace"
                 : "🎉 Event Space"}
             </p>
 
-            <p><strong>${space.price}</strong></p>
+
+            <p> Price: <strong>{space.price} $</strong></p>
 
             <p style={{ fontSize: "12px" }}>
               {space.reserved ? "🔴 Reserved" : "🟢 Available"}
