@@ -12,13 +12,11 @@ function UploadPage() {
   const handleUpload = (e) => {
     e.preventDefault();
 
-    // check if logged in
     if (!user) {
       alert("You must be logged in to upload");
       return;
     }
 
-    // send to backend
     fetch("http://localhost:3001/spaces", {
       method: "POST",
       headers: {
@@ -35,29 +33,52 @@ function UploadPage() {
       .then((data) => {
         console.log("Uploaded:", data);
 
-        // clear form
         setTitle("");
         setDescription("");
 
-        // go back to home
         navigate("/");
       })
       .catch((err) => console.error("Upload error:", err));
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Upload Space</h1>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
+        background: "#f4f4f4",
+      }}
+    >
+      <form
+        onSubmit={handleUpload}
+        style={{
+          width: "100%",
+          maxWidth: "350px",
+          padding: "25px",
+          border: "1px solid #ddd",
+          borderRadius: "12px",
+          background: "#fff",
+          boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+        }}
+      >
+        <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+          Upload Space
+        </h2>
 
-      <form onSubmit={handleUpload}>
         <input
           type="text"
           placeholder="Space title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
+          style={{
+            width: "100%",
+            padding: "8px",
+            marginBottom: "10px",
+          }}
         />
-        <br />
 
         <input
           type="text"
@@ -65,10 +86,27 @@ function UploadPage() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
+          style={{
+            width: "100%",
+            padding: "8px",
+            marginBottom: "15px",
+          }}
         />
-        <br />
 
-        <button type="submit">Upload</button>
+        <button
+          type="submit"
+          style={{
+            width: "100%",
+            padding: "10px",
+            background: "#17a2b8",
+            color: "white",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+        >
+          Upload
+        </button>
       </form>
     </div>
   );

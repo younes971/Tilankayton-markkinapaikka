@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "email": "test5@test.com",
+      "password": "1111"
+    },
+    {
+      "email": "test6@test.com",
+      "password": "1111"
+    },
+    {
+      "email": "test1@test.fi",
+      "password": "$2b$10$Sj9Q1am87wlGJWZ7fg.KzeSuKXSLJsapdYliyPk7u2Q275CUzyWB6"
+    },
+    {
+      "email": "test3@test.fi",
+      "password": "$2b$10$iaxfavyyQI/y4Pg87p3nQu7DyVeieWcmSWS4aERWGbCedeSwH9Dy6"
+    },
+    {
+      "email": "test4@test.fi",
+      "password": "$2b$10$S9Xg21OmPqitmUg3F3L4BuG7QYBLr3Ni.M7DEAjO1zof399ruTcOC"
+    }
+  ],
+  "spaces": [
+    {
+      "id": 1775500217221,
+      "title": "asdf",
+      "description": "asdf",
+      "reserved": false,
+      "owner": "test4@test.fi",
+      "price": "3243",
+      "category": "workspace",
+      "image": null,
+      "reserverdBy": null
+    },
+    {
+      "id": 1775500330083,
+      "title": "wsd",
+      "description": "adsf",
+      "reserved": true,
+      "owner": "test3@test.fi",
+      "price": "343",
+      "category": "workspace",
+      "image": null,
+      "reserverdBy": null,
+      "reservedBy": "test3@test.fi"
+    }
+  ]
+}

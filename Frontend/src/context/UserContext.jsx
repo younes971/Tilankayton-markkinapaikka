@@ -1,16 +1,21 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 
-const UserContext = React.createContext();
+export const UserContext = createContext();
 
 function UserProvider({ children }) {
-  const [user, setUser] = React.useState(null);
+  const [user, setUser] = useState (() => {
+    const savedUser = localStorage.getItem("user");
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
 
-  const login = (email) => {
-    setUser({ email });
+  const login = (userData) => {
+    setUser(userData);
+    localStorage.setItem("user", JSON.stringify(userData));
   };
 
   const logout = () => {
     setUser(null);
+    localStorage.removeItem("user");
   };
 
   return (
@@ -20,4 +25,4 @@ function UserProvider({ children }) {
   );
 }
 
-export { UserContext, UserProvider };
+export default UserProvider;
