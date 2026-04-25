@@ -33,8 +33,6 @@ const [visibleComments, setVisibleComments] = useState({});
     fetchSpaces();
   }, []);
 
-  
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!user) return;
