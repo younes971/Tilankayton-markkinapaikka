@@ -19,19 +19,28 @@
     {
       "email": "test4@test.fi",
       "password": "$2b$10$S9Xg21OmPqitmUg3F3L4BuG7QYBLr3Ni.M7DEAjO1zof399ruTcOC"
+    },
+    {
+      "email": "test@test",
+      "password": "$2b$10$A12Wr.E1oV2gfI5p7pzdc.M6UaPMassg4qaK.urdSBEnSPbllT8p."
+    },
+    {
+      "email": "test4@test",
+      "password": "$2b$10$/qWT.Mh9Htj350veW4TkGuQF6e6e3uvAG5eDt5BiSmkEobhu2TnQm"
     }
   ],
   "spaces": [
     {
       "id": 1775500217221,
-      "title": "asdf",
+      "title": "work",
       "description": "asdf",
-      "reserved": false,
+      "reserved": true,
       "owner": "test4@test.fi",
       "price": "3243",
       "category": "workspace",
       "image": null,
-      "reserverdBy": null
+      "reserverdBy": null,
+      "reservedBy": "test4@test.fi"
     },
     {
       "id": 1775500330083,
@@ -44,6 +53,252 @@
       "image": null,
       "reserverdBy": null,
       "reservedBy": "test3@test.fi"
+    },
+    {
+      "id": 1776623920405,
+      "title": "aaa",
+      "description": "ccc",
+      "reserved": true,
+      "owner": "test4@test.fi",
+      "price": "23",
+      "category": "event",
+      "image": null,
+      "reserverdBy": null,
+      "reservedBy": "test@test"
+    },
+    {
+      "id": 1776624530858,
+      "title": "der",
+      "description": "sadf",
+      "reserved": false,
+      "owner": "test4@test.fi",
+      "price": "34",
+      "category": "workspace",
+      "image": null,
+      "reserverdBy": null
+    },
+    {
+      "id": 1776624897097,
+      "title": "fg",
+      "description": "edf",
+      "reserved": false,
+      "owner": "test4@test.fi",
+      "price": "45",
+      "category": "workspace",
+      "rentDuration": "month",
+      "image": null,
+      "reserverdBy": null
+    },
+    {
+      "id": 1776625459135,
+      "title": "er",
+      "description": "ewr",
+      "reserved": false,
+      "owner": "test4@test.fi",
+      "price": "43",
+      "category": "workspace",
+      "image": null,
+      "reserverdBy": null
+    },
+    {
+      "id": 1776625495461,
+      "title": "qqqq",
+      "description": "sdf",
+      "reserved": false,
+      "owner": "test4@test.fi",
+      "price": "3423",
+      "category": "event",
+      "image": null,
+      "reserverdBy": null
+    },
+    {
+      "id": 1776625646445,
+      "title": "e",
+      "description": "we",
+      "reserved": false,
+      "owner": "test4@test.fi",
+      "price": "17",
+      "category": "workspace",
+      "image": null,
+      "reserverdBy": null
+    },
+    {
+      "id": 1776626107668,
+      "title": "ppp",
+      "description": "ppp",
+      "reserved": false,
+      "owner": "test4@test.fi",
+      "price": "9999",
+      "category": "workspace",
+      "image": null,
+      "reserverdBy": null
+    },
+    {
+      "id": 1776628392411,
+      "title": "sd",
+      "description": "dsf",
+      "reserved": false,
+      "owner": "test4@test.fi",
+      "price": "43434",
+      "category": "workspace",
+      "image": null,
+      "reserverdBy": null
+    },
+    {
+      "id": 1776628797668,
+      "title": "df",
+      "description": "xsvc",
+      "reserved": false,
+      "owner": "test4@test.fi",
+      "price": "3434",
+      "category": "workspace",
+      "image": null,
+      "reserverdBy": null
+    },
+    {
+      "id": 1776777028340,
+      "title": "sadd",
+      "description": "asd",
+      "reserved": false,
+      "owner": "test@test",
+      "price": "234",
+      "category": "workspace",
+      "startDate": "2026-04-21",
+      "endDate": "2026-04-28",
+      "image": null,
+      "reservedBy": null
+    },
+    {
+      "id": 1776779133723,
+      "title": "yy",
+      "description": "yyy",
+      "reserved": false,
+      "owner": "test@test",
+      "price": "111",
+      "category": "workspace",
+      "startDate": "2026-04-21",
+      "endDate": "2026-04-28",
+      "image": null,
+      "reservedBy": null
+    },
+    {
+      "id": 1776780083129,
+      "title": ">Yx",
+      "description": "<ycx",
+      "reserved": false,
+      "owner": "test@test",
+      "price": "232232",
+      "category": "workspace",
+      "startDate": "2026-04-21",
+      "endDate": "2026-04-28",
+      "image": null,
+      "reservedBy": null
+    },
+    {
+      "id": 1776780700395,
+      "title": "s",
+      "description": "asd",
+      "reserved": false,
+      "owner": "test@test",
+      "price": "2323",
+      "category": "workspace",
+      "startDate": "2026-04-21",
+      "endDate": "2026-04-28",
+      "image": null,
+      "reservedBy": null
+    },
+    {
+      "id": 1776780873292,
+      "title": "Dawd",
+      "description": "sad",
+      "reserved": false,
+      "owner": "test@test",
+      "price": "323",
+      "category": "workspace",
+      "startDate": "2026-04-21",
+      "endDate": "2026-04-28",
+      "image": null,
+      "reservedBy": null
+    },
+    {
+      "id": 1776781055353,
+      "title": "sad",
+      "description": "cxy",
+      "reserved": false,
+      "owner": "test@test",
+      "price": "2332",
+      "category": "workspace",
+      "startDate": "2026-04-21",
+      "endDate": "2026-04-28",
+      "image": null,
+      "reservedBy": null
+    },
+    {
+      "id": 1776781230670,
+      "title": "sxcd",
+      "description": "dcv",
+      "reserved": true,
+      "owner": "test@test",
+      "price": "34",
+      "category": "workspace",
+      "startDate": "2026-04-21",
+      "endDate": "2026-04-28",
+      "image": null,
+      "reservedBy": "test@test",
+      "reservedFrom": "2026-01-3",
+      "reservedTo": "2026-01-13"
+    },
+    {
+      "id": 1776781432815,
+      "title": "yxcv",
+      "description": "cxv<",
+      "reserved": true,
+      "owner": "test4@test",
+      "price": "2342",
+      "category": "workspace",
+      "startDate": "2026-04-21",
+      "endDate": "2026-04-28",
+      "image": null,
+      "reservedBy": "test@test"
+    },
+    {
+      "id": 1776781807682,
+      "title": "qqq",
+      "description": "qqq",
+      "reserved": true,
+      "owner": "test4@test",
+      "price": "1212",
+      "category": "event",
+      "startDate": "2026-04-21",
+      "endDate": "2026-04-28",
+      "image": null,
+      "reservedBy": "test@test"
+    },
+    {
+      "id": 1776782333072,
+      "title": "er",
+      "description": "qereE",
+      "reserved": false,
+      "owner": "test@test",
+      "price": "12",
+      "category": "workspace",
+      "startDate": "2026-04-21",
+      "endDate": "2026-05-05",
+      "image": null,
+      "reservedBy": null
+    },
+    {
+      "id": 1776784775393,
+      "title": "ttt",
+      "description": "sdf",
+      "reserved": true,
+      "owner": "test@test",
+      "price": "3434",
+      "category": "workspace",
+      "startDate": "2026-04-22",
+      "endDate": "2026-04-29",
+      "image": null,
+      "reservedBy": "test@test"
     }
   ]
 }

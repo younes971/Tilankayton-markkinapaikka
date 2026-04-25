@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { UserContext } from "./context/UserContext";
 import SpacesPage from "./pages/SpacesPage";
 import LoginPage from "./pages/LoginPage";
+import MySpacesPage from "./pages/MySpacesPage";
 
 function App() {
   const { user, logout } = useContext(UserContext);
@@ -34,7 +35,12 @@ function App() {
                 Upload
               </Link>
 
+              <Link to="/myspaces" style={{ marginRight: "10px" }}>
+  My Spaces
+</Link>
+
               <button onClick={logout}>Logout</button>
+              
             </>
           ) : (
             <>
@@ -52,6 +58,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/upload" element={<UploadPage />} />
+        <Route path="/myspaces" element={<MySpacesPage />} />
       </Routes>
     </div>
   );

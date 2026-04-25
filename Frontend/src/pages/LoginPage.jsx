@@ -10,32 +10,36 @@ function LoginPage() {
   const [error, setError] = useState("");
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const res = await fetch("http://localhost:3001/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+  try {
+    const res = await fetch("http://localhost:3001/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
 
-      const data = await res.json();
+    const data = await res.json();
 
-      if (!res.ok) {
-        setError(data.error);
-        return;
-      }
-
-      login(data.user);
-      
-      navigate("/");
-    } catch (err) {
-      console.error(err);
-      setError("Something went wrong");
+    // ❌ if login failed → stop here
+    if (!res.ok) {
+      setError(data.error);
+      return;
     }
-  };
+
+    // ✅ ONLY save token if login is successful
+    localStorage.setItem("token", data.token);
+
+    login(data.user);
+    navigate("/");
+
+  } catch (err) {
+    console.error(err);
+    setError("Something went wrong");
+  }
+};
 
   return (
     <div

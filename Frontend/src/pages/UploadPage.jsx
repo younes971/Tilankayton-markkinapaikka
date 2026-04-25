@@ -5,6 +5,7 @@ import { UserContext } from "../context/UserContext";
 function UploadPage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [image, setImage] = useState(null);
 
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
@@ -17,24 +18,32 @@ function UploadPage() {
       return;
     }
 
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("owner", user.email);
+    if (image) formData.append("image", image);
+
     fetch("http://localhost:3001/spaces", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify({
-        title,
-        description,
-        reserved: false,
-        owner: user.email,
-      }),
+      body: formData,
     })
-      .then((res) => res.json())
-      .then((data) => {
+      .then(async (res) => {
+        const data = await res.json();
+
+        if (!res.ok) {
+          alert(data.error || "Upload failed");
+          return;
+        }
+
         console.log("Uploaded:", data);
 
         setTitle("");
         setDescription("");
+        setImage(null);
 
         navigate("/");
       })
@@ -73,11 +82,7 @@ function UploadPage() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
-          style={{
-            width: "100%",
-            padding: "8px",
-            marginBottom: "10px",
-          }}
+          style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
         />
 
         <input
@@ -86,11 +91,14 @@ function UploadPage() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
-          style={{
-            width: "100%",
-            padding: "8px",
-            marginBottom: "15px",
-          }}
+          style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
+        />
+
+        {/* NEW IMAGE INPUT */}
+        <input
+          type="file"
+          onChange={(e) => setImage(e.target.files[0])}
+          style={{ marginBottom: "15px" }}
         />
 
         <button
