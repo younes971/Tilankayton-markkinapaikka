@@ -3,52 +3,52 @@ Monialustaprojekti / yksilötyö
 
 ##Sovellusidea:
 
-markkinapaikka tilojen jakamiseen
-käyttäjät voivat lisätä ja selata tiloja
-tavoite: parempi tilojen käyttö ja vähemmän tyhjää tilaa
+-markkinapaikka tilojen jakamiseen
+-käyttäjät voivat lisätä ja selata tiloja
+-tavoite: parempi tilojen käyttö ja vähemmän tyhjää tilaa
 
 ##Ominaisuudet:
 
-käyttäjä voi rekisteröityä ja kirjautua
+-käyttäjä voi rekisteröityä ja kirjautua
 
-käyttäjä voi lisätä tilan
+-käyttäjä voi lisätä tilan
 
-käyttäjä voi muokata omaa tilaa
+-käyttäjä voi muokata omaa tilaa
 
-käyttäjä voi poistaa oman tilan
+-käyttäjä voi poistaa oman tilan
 
-tilojen selaus
+-tilojen selaus
 
-tilan varaus
+-tilan varaus
 
-tykkäys (like)
+-tykkäys (like)
 
-kommentit
+-kommentit
 
-haku
+-haku
 
-lajittelu hinnan mukaan (low-high / high-low)
+-lajittelu hinnan mukaan (low-high / high-low)
 
 ##Käyttö:
 
 Frontend:
 
-npm install
+-npm install
 
-npm run dev
+-npm run dev
 
 Backend:
 
-npm install
+-npm install
 
-node index.js
+-node index.js
 
-Teknologiat:
+##Teknologiat:
 
-React
+-React
 
-Node.js / Express
+-Node.js / Express
 
-REST API
+-REST API
 
-Database (MySQL)
+-Database (MySQL)
