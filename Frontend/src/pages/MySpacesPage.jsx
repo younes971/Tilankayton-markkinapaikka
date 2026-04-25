@@ -9,7 +9,8 @@ function MySpacesPage() {
     fetch("http://localhost:3001/spaces")
       .then((res) => res.json())
       .then((data) => {
-        // ✅ ONLY MY SPACES
+        
+        // ONLY MY SPACES
         const mySpaces = data.filter(
           (space) => user && space.owner === user.email
         );
@@ -117,7 +118,7 @@ function MySpacesPage() {
 
                 {isReserved && <p>👤 {space.reservedBy}</p>}
 
-                {/* ✅ NO ACTIONS IN MY SPACES (READ ONLY) */}
+                {/*  NO ACTIONS IN MY SPACES (READ ONLY) */}
                 <div style={{ display: "flex", gap: "8px" }}>
                   <button disabled>Reserve</button>
                   <button disabled>Edit</button>
