@@ -4,7 +4,9 @@ Monialustaprojekti / yksilötyö
 ##Sovellusidea:
 
 -markkinapaikka tilojen jakamiseen
+
 -käyttäjät voivat lisätä ja selata tiloja
+
 -tavoite: parempi tilojen käyttö ja vähemmän tyhjää tilaa
 
 ##Ominaisuudet:
