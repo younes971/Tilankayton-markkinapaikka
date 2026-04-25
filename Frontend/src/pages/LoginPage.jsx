@@ -23,13 +23,13 @@ function LoginPage() {
 
     const data = await res.json();
 
-    // ❌ if login failed → stop here
+    // if login failed 
     if (!res.ok) {
       setError(data.error);
       return;
     }
 
-    // ✅ ONLY save token if login is successful
+    // save token if login is successful
     localStorage.setItem("token", data.token);
 
     login(data.user);
