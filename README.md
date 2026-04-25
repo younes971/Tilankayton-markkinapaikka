@@ -2,11 +2,13 @@
 Monialustaprojekti / yksilötyö
 
 ##Sovellusidea:
+
 markkinapaikka tilojen jakamiseen
 käyttäjät voivat lisätä ja selata tiloja
 tavoite: parempi tilojen käyttö ja vähemmän tyhjää tilaa
 
 ##Ominaisuudet:
+
 käyttäjä voi rekisteröityä ja kirjautua
 
 käyttäjä voi lisätä tilan
@@ -28,6 +30,7 @@ haku
 lajittelu hinnan mukaan (low-high / high-low)
 
 ##Käyttö:
+
 Frontend:
 npm install
 npm run dev
@@ -37,6 +40,7 @@ npm install
 node index.js
 
 Teknologiat:
+
 React
 Node.js / Express
 REST API
