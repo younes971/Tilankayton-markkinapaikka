@@ -10,7 +10,7 @@ function MySpacesPage() {
       .then((res) => res.json())
       .then((data) => {
         
-        // ONLY MY SPACES
+        // ONLY MY SPACEs
         const mySpaces = data.filter(
           (space) => user && space.owner === user.email
         );
