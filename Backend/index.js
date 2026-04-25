@@ -144,7 +144,7 @@ app.post("/spaces", auth, upload.single("image"), async (req, res) => {
   }
 });
 
-// DELETE 
+// DELETE
 app.delete("/spaces/:id", auth, async (req, res) => {
   try {
     const id = req.params.id;

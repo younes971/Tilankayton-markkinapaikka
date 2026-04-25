@@ -1,14 +1,34 @@
 Tilankäytön markkinapaikka
-
 Monialustaprojekti / yksilötyö
 
 Sovellusidea:
+markkinapaikka tilojen jakamiseen
+käyttäjät voivat lisätä ja selata tiloja
+tavoite: parempi tilojen käyttö ja vähemmän tyhjää tilaa
 
-Ajatus tukee kestävää kehitystä, koska se auttaa käyttämään olemassa olevia tiloja tehokkaammin sen sijaan, että ne jätettäisiin tyhjilleen.
-Kun niitä voidaan jakaa ja käyttää paremmin, uusien tilojen rakentamisen tarve voi vähentyä.
+Ominaisuudet:
+käyttäjä voi rekisteröityä ja kirjautua
+käyttäjä voi lisätä tilan
+käyttäjä voi muokata omaa tilaa
+käyttäjä voi poistaa oman tilan
+tilojen selaus
+tilan varaus
+tykkäys (like)
+kommentit
+haku
+lajittelu hinnan mukaan (low-high / high-low)
 
-Sovellus on markkinapaikka, jossa käyttäjät voivat jakaa ja löytää vapaita tiloja.
-Käyttäjät voivat lisätä listauksen tilasta, kuten kokoushuoneesta, työhuoneesta tai tapahtumatilasta.
-Muut käyttäjät voivat selata näitä tiloja ja löytää tarpeisiinsa sopivan paikan.
+Käyttö:
+Frontend:
+npm install
+npm run dev
 
-Kun niitä voidaan jakaa ja käyttää paremmin, uusien tilojen rakentamisen tarve voi vähentyä.
+Backend:
+npm install
+node index.js
+
+Teknologiat:
+React
+Node.js / Express
+REST API
+Database (MySQL)
