@@ -107,7 +107,7 @@ app.post("/login", async (req, res) => {
 
 // GET
 app.get("/spaces", async (req, res) => {
-  console.log("🔥 USING DATABASE NOW");
+  console.log("USING DATABASE NOW");
   try {
     const [rows] = await db.query("SELECT * FROM spaces");
     res.json(rows);
