@@ -32,16 +32,23 @@ lajittelu hinnan mukaan (low-high / high-low)
 ##Käyttö:
 
 Frontend:
+
 npm install
+
 npm run dev
 
 Backend:
+
 npm install
+
 node index.js
 
 Teknologiat:
 
 React
+
 Node.js / Express
+
 REST API
+
 Database (MySQL)
