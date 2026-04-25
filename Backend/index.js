@@ -6,7 +6,7 @@ const express = require("express");
 const cors = require("cors");
 const db = require("./db");
 const jwt = require("jsonwebtoken");
-const auth = require("./middleware/auth"); // ✅ ONLY ONCE HERE
+const auth = require("./middleware/auth");
 
 const SECRET = "mysecret123";
 
@@ -105,7 +105,7 @@ app.post("/login", async (req, res) => {
 
 // ===== SPACES =====
 
-// GET (PUBLIC)
+// GET
 app.get("/spaces", async (req, res) => {
   console.log("🔥 USING DATABASE NOW");
   try {
@@ -117,7 +117,7 @@ app.get("/spaces", async (req, res) => {
   }
 });
 
-// CREATE (PROTECTED)
+// CREATE 
 app.post("/spaces", auth, upload.single("image"), async (req, res) => {
   try {
     await db.query(
@@ -144,7 +144,7 @@ app.post("/spaces", auth, upload.single("image"), async (req, res) => {
   }
 });
 
-// DELETE (OPTIONAL: protect later)
+// DELETE 
 app.delete("/spaces/:id", auth, async (req, res) => {
   try {
     const id = req.params.id;
@@ -160,7 +160,6 @@ app.delete("/spaces/:id", auth, async (req, res) => {
       return res.status(404).json({ error: "Space not found" });
     }
 
-    // only owner can delete
     if (space.owner !== req.user.email) {
       return res.status(403).json({ error: "Not allowed" });
     }
@@ -195,21 +194,18 @@ app.patch("/spaces/:id/reserve", auth, async (req, res) => {
     const owner = (space.owner || "").trim().toLowerCase();
     const reservedBy = (space.reservedBy || "").trim().toLowerCase();
 
-    // Owner cannot reserve own space
     if (owner === user) {
       return res.status(400).json({
         error: "You cannot reserve your own space",
       });
     }
 
-    // Same user already reserved
     if (space.reserved && reservedBy === user) {
       return res.status(400).json({
         error: "You already reserved this space",
       });
     }
 
-    // Another user already reserved
     if (space.reserved && reservedBy && reservedBy !== user) {
       return res.status(400).json({
         error: "This space is already reserved",
@@ -232,7 +228,7 @@ app.patch("/spaces/:id/reserve", auth, async (req, res) => {
   }
 });
 
-// EDIT (PROTECTED + OWNER ONLY)
+// EDIT
 app.put("/spaces/:id", auth, async (req, res) => {
   try {
     const id = req.params.id;
@@ -285,7 +281,9 @@ app.patch("/spaces/:id/like", auth, async (req, res) => {
     );
 
     if (existing.length > 0) {
+      
       // Unlike
+      
       await db.query(
         "DELETE FROM space_likes WHERE spaceId = ? AND userEmail = ?",
         [spaceId, userEmail]
