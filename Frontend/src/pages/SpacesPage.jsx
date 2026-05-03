@@ -255,7 +255,11 @@ const handleComment = async (id) => {
         fontFamily: "Arial",
 background: "linear-gradient(180deg, #f7f7f7 0%, #ffffff 100%)",      }}
     >
-      <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
+      <h1 style={{ textAlign: "center",
+         marginBottom: "10px",
+          fontSize: "42px",
+          fontWeight: "700",
+          }}>
         Marketplace Spaces
       </h1>
 
@@ -338,7 +342,18 @@ background: "linear-gradient(180deg, #f7f7f7 0%, #ffffff 100%)",      }}
 </div>
 
 {/* SEARCH */}
+
 <div style={{ marginBottom: "20px", textAlign: "center" }}>
+  <h2 style={{
+  textAlign: "center",
+  marginBottom: "20px",
+  fontSize: "42px",
+  fontWeight: "700",
+  color: "#555"
+  
+}}>
+  Find your Space
+</h2>
   <input
     type="text"
     placeholder="Search spaces..."
@@ -352,6 +367,7 @@ background: "linear-gradient(180deg, #f7f7f7 0%, #ffffff 100%)",      }}
     }}
   />
 </div>
+  
 
       {/* GRID */}
       <div
