@@ -92,6 +92,9 @@ const [visibleComments, setVisibleComments] = useState({});
 
     fetch(`http://localhost:3001/spaces/${space.id}`, {
       method: "DELETE",
+      headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
     }).then(() => fetchSpaces());
   };
 
